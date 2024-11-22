@@ -1,4 +1,4 @@
-package softka.assesment.client.service;
+package softka.assesment.client.unit.service;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -11,6 +11,8 @@ import softka.assesment.client.model.Client;
 import softka.assesment.client.model.Common;
 import softka.assesment.client.model.DAO.ClientObjDao;
 import softka.assesment.client.repository.ClientDao;
+import softka.assesment.client.repository.ClientDaoImp;
+import softka.assesment.client.service.ClientServiceImp;
 
 
 import java.util.Objects;
@@ -26,8 +28,7 @@ class ClientServiceImpTest {
     private ClientServiceImp clientService;
 
     @Mock
-    private ClientDao clientDao;
-
+    private ClientDaoImp clientDao;
 
 
     @Test

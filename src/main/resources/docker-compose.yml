@@ -1,17 +1,19 @@
-version: "1.0"
 services:
   postgredb:
+    container_name: postgres_container
     image: postgres:16-alpine
     restart: always
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=admin
+       - POSTGRES_USER=postgres
+       - POSTGRES_PASSWORD=admin
+       - POSTGRES_DB=sofka_assesment
     ports:
       - '5432:5432'
     volumes:
-      - db:/var/lib/postgresql/data
-  volumes:
-    db:
-      driver: local
+      - db_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
+volumes:
+  db_data:
+    driver: local
 

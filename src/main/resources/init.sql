@@ -1,7 +1,5 @@
 CREATE USER sofkaUser;
 
-CREATE DATABASE sofka_assesment;
-
 GRANT ALL PRIVILEGES ON DATABASE sofka_assesment TO sofkaUser;
 
 CREATE TYPE genders AS ENUM('male', 'female', 'other', 'NA');

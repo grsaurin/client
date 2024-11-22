@@ -8,13 +8,13 @@ import lombok.Setter;
 import softka.assesment.client.model.Common;
 
 
-@Entity(name = "ClientDAO")
+@Entity(name = "ClientObjDao")
 @Table(name = "clients")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ClientDao {
+public class ClientObjDao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -33,15 +33,12 @@ public class ClientDao {
     @Enumerated(EnumType.ORDINAL)
     private Common.ClientStatus clientStatus;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "addresses", referencedColumnName = "id")
-    private AddressDao address;
+    @Column(name = "address")
+    private String address;
 
     @Column(name = "phone")
     private String phone;
 
     @Column(name = "password")
     private String password;
-
-
 }
